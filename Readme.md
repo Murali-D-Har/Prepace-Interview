@@ -4,7 +4,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-4.x-000000?style=flat-square&logo=express)
 ![MongoDB](https://img.shields.io/badge/MongoDB-7.x-47A248?style=flat-square&logo=mongodb&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-GPT--3.5-412991?style=flat-square&logo=openai)
+![Groq](https://img.shields.io/badge/Groq-Llama%203.3%2070B-F55036?style=flat-square&logo=groq)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 
 > A full-stack interview preparation platform with AI-powered answer feedback, streak tracking, session history, and a competitive leaderboard.
@@ -21,7 +21,7 @@
 
 ## ✨ Features
 
-- 🤖 **AI Feedback** — Every answer is analyzed by GPT-3.5 and scored out of 10 with strengths, improvements, and keyword detection
+- 🤖 **AI Feedback** — Every answer is analyzed by Groq (Llama 3.3 70B) and scored out of 10 with strengths, improvements, and keyword detection
 - ⏱ **3 Session Modes** — Timed (countdown per question), Relaxed (no timer), Mock (realistic simulation)
 - 📚 **Question Bank** — 22 pre-seeded questions across 6 categories: Behavioral, Technical, HR, Situational, Leadership, Problem-Solving
 - 🔥 **Streak Tracking** — Daily check-in system with current and longest streak
@@ -91,7 +91,7 @@ prepace/
 
 - [Node.js](https://nodejs.org/) v18 or higher
 - [MongoDB](https://www.mongodb.com/) (local) or a free [MongoDB Atlas](https://cloud.mongodb.com) cluster
-- An [OpenAI API key](https://platform.openai.com/) _(optional — mock feedback works without it)_
+- An [Groq API key](https://platform.groq.com/) _(optional — mock feedback works without it)_
 
 ---
 
@@ -123,7 +123,7 @@ PORT=5000
 MONGO_URI=mongodb://localhost:27017/interview-practice
 JWT_SECRET=your_secret_key_here
 JWT_EXPIRES_IN=7d
-OPENAI_API_KEY=sk-...        # Leave blank to use mock feedback
+GROQ_API_KEY=sk-...        # Leave blank to use mock feedback
 CLIENT_URL=http://localhost:3000
 ```
 
@@ -245,7 +245,7 @@ When you submit an answer, the AI returns:
 }
 ```
 
-> If no OpenAI API key is set, the app automatically falls back to mock feedback so you can still develop and test locally.
+> If no Groq API key is set, the app automatically falls back to mock feedback so you can still develop and test locally.
 
 ---
 
@@ -256,7 +256,7 @@ When you submit an answer, the AI returns:
 | Backend        | Node.js, Express.js                |
 | Database       | MongoDB, Mongoose                  |
 | Authentication | JWT, bcryptjs                      |
-| AI             | OpenAI GPT-3.5                     |
+| AI             | Groq (Llama 3.3 70B)               |
 | Frontend       | Vanilla HTML, CSS, JavaScript      |
 | Fonts          | Bebas Neue, Outfit, JetBrains Mono |
 | Security       | Helmet, CORS, express-rate-limit   |
@@ -281,7 +281,7 @@ npm run seed    # Seed the database with 22 questions
 | `MONGO_URI`      | MongoDB connection string   | ✅ Yes   |
 | `JWT_SECRET`     | Secret for signing tokens   | ✅ Yes   |
 | `JWT_EXPIRES_IN` | Token expiry (default: 7d)  | No       |
-| `OPENAI_API_KEY` | OpenAI key for AI feedback  | No       |
+| `GROQ_API_KEY`   | GROQ key for AI feedback    | No       |
 | `CLIENT_URL`     | Frontend URL for CORS       | No       |
 
 ---
