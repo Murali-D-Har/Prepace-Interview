@@ -1,4 +1,7 @@
 # PrepAce — AI-Powered Interview Practice App
+## 🌐 Live Demo
+
+[Visit PrepAce](https://prepace-frontend.vercel.app) | [API Health](https://prepace-backend.vercel.app/health)
 
 ![PrepAce Banner](https://img.shields.io/badge/PrepAce-Interview%20Practice-c8f135?style=for-the-badge&labelColor=0a0a10)
 ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=nodedotjs&logoColor=white)
