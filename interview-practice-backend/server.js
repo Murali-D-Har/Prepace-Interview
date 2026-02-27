@@ -39,6 +39,15 @@ app.use('/api/leaderboard', require('./routes/leaderboard'));
 // ─── Health Check ─────────────────────────────────────────────────────────────
 app.get('/health', (req, res) => res.json({ status: 'ok', timestamp: new Date() }));
 
+app.get('/', (req, res) => {
+  res.json({
+    app: 'PrepAce API',
+    status: 'running',
+    version: '1.0.0',
+    endpoints: '/health | /api/auth | /api/questions | /api/sessions'
+  });
+});
+
 // ─── 404 Handler ──────────────────────────────────────────────────────────────
 app.use((req, res) => res.status(404).json({ error: 'Route not found' }));
 
