@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrepAce — Sign In</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+<div id="nprogress"></div>
+<div id="toast-container"></div>
+
+<div class="auth-bg">
+
+  <!-- Left Branding Panel -->
+  <div class="auth-left">
+    <div class="auth-left-bg"></div>
+    <div class="auth-left-content">
+      <div class="auth-logo">PREP<span style="color:var(--lime)">ACE</span></div>
+      <div class="auth-hero-text">
+        MASTER<br>EVERY<br><em>INTERVIEW</em>
+      </div>
+      <p class="auth-desc">
+        AI-powered interview practice with real-time feedback, 
+        streak tracking, and a curated question bank across 
+        6 categories.
+      </p>
+      <div class="auth-features">
+        <div class="auth-feature"><div class="auth-feature-dot"></div>AI feedback on every answer</div>
+        <div class="auth-feature"><div class="auth-feature-dot"></div>Timed sessions with 3 modes</div>
+        <div class="auth-feature"><div class="auth-feature-dot"></div>Track streaks & weak areas</div>
+        <div class="auth-feature"><div class="auth-feature-dot"></div>Compete on the leaderboard</div>
+      </div>
+    </div>
+    <div class="auth-bottom">PrepAce // AI Interview Coach // v1.0</div>
+  </div>
+
+  <!-- Right Form Panel -->
+  <div class="auth-right">
+    <div class="auth-card">
+      <div class="auth-card-title">WELCOME</div>
+      <div class="auth-card-sub">// sign in to your workspace</div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="switchTab('login')">Sign In</button>
+        <button class="auth-tab" onclick="switchTab('register')">Register</button>
+      </div>
+
+      <div id="auth-error" class="auth-error"></div>
+
+      <!-- Login -->
+      <form id="login-form" class="auth-form" onsubmit="return false">
+        <div class="field">
+          <label>Email Address</label>
+          <input type="email" id="login-email" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password">
+        </div>
+        <button type="button" class="btn btn-lime btn-lg btn-full" id="login-btn" onclick="handleLogin()">
+          Sign In →
+        </button>
+      </form>
+
+      <!-- Register -->
+      <form id="register-form" class="auth-form" style="display:none" onsubmit="return false">
+        <div class="field">
+          <label>Full Name</label>
+          <input type="text" id="reg-name" placeholder="Alex Johnson" autocomplete="name">
+        </div>
+        <div class="field">
+          <label>Email Address</label>
+          <input type="email" id="reg-email" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="field">
+          <label>Password <span style="color:var(--text3);font-size:0.65rem">(min 6 chars)</span></label>
+          <input type="password" id="reg-password" placeholder="••••••••" autocomplete="new-password">
+        </div>
+        <button type="button" class="btn btn-lime btn-lg btn-full" id="register-btn" onclick="handleRegister()">
+          Create Account →
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

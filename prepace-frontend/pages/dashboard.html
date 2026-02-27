@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrepAce — Dashboard</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+<div id="nprogress"></div>
+<div id="toast-container"></div>
+
+<div class="app-shell">
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="logo">PREP<span class="logo-dot">ACE</span></div>
+      <div class="logo-tag">// AI Interview Coach</div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Main</div>
+      <a class="nav-link" href="dashboard.html">
+        <span class="nav-icon">◈</span> Dashboard
+      </a>
+      <a class="nav-link" href="practice.html">
+        <span class="nav-icon">▷</span> Practice
+      </a>
+      <div class="nav-section-label">Review</div>
+      <a class="nav-link" href="history.html">
+        <span class="nav-icon">◷</span> History
+      </a>
+      <a class="nav-link" href="leaderboard.html">
+        <span class="nav-icon">◆</span> Leaderboard
+      </a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="user-row">
+        <div class="avatar" id="sb-avatar">?</div>
+        <div class="user-meta">
+          <div class="user-name" id="sb-name">Loading...</div>
+          <div class="user-streak" id="sb-streak">🔥 — streak</div>
+        </div>
+      </div>
+      <button class="logout-link" onclick="logout()">⤴ Sign out</button>
+    </div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <div class="main-area">
+    <header class="topbar">
+      <div class="topbar-title">DASHBOARD</div>
+      <div class="topbar-sub" id="topbar-date"></div>
+    </header>
+
+    <main class="page-content">
+
+      <!-- Greeting + Daily Question -->
+      <div class="greeting-row">
+        <div class="greeting">
+          <h1 id="greeting-text">Good morning</h1>
+          <p>// your performance overview</p>
+        </div>
+        <div class="daily-card anim-fade-up">
+          <div class="daily-card-label">⚡ Question of the Day</div>
+          <div class="daily-card-q" id="daily-q">Loading today's question...</div>
+          <div class="daily-card-meta">
+            <span class="badge badge-blue" id="daily-cat">—</span>
+            <span class="badge badge-neutral" id="daily-diff">—</span>
+            <button class="btn btn-lime btn-sm" id="daily-practice-btn">Practice →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="stats-row" id="stats-grid">
+        <div class="stat-card skeleton" style="height:110px"></div>
+        <div class="stat-card skeleton" style="height:110px"></div>
+        <div class="stat-card skeleton" style="height:110px"></div>
+        <div class="stat-card skeleton" style="height:110px"></div>
+      </div>
+
+      <!-- Charts + Recent -->
+      <div class="grid-2" style="margin-bottom:1.5rem">
+        <div class="card">
+          <div class="section-header">
+            <span class="heading">Score by Category</span>
+          </div>
+          <div class="cat-bars" id="cat-bars">
+            <div class="loading-row"><div class="spinner"></div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="section-header">
+            <span class="heading">⚠ Weak Areas</span>
+            <span class="subtext">avg score &lt; 6</span>
+          </div>
+          <div class="cat-bars" id="weak-areas">
+            <div class="loading-row"><div class="spinner"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Sessions -->
+      <div class="card">
+        <div class="section-header">
+          <span class="heading">Recent Sessions</span>
+          <a href="history.html" class="btn btn-ghost btn-sm">View All →</a>
+        </div>
+        <div class="recent-list" id="recent-list">
+          <div class="loading-row"><div class="spinner"></div> Loading...</div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script src="../js/dashboard.js"></script>
+<script>
+  document.getElementById('topbar-date').textContent =
+    new Date().toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric' });
+</script>
+</body>
+</html>

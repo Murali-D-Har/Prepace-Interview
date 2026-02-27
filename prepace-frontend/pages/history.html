@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrepAce — History</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+<div id="nprogress"></div>
+<div id="toast-container"></div>
+
+<div class="app-shell">
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="logo">PREP<span class="logo-dot">ACE</span></div>
+      <div class="logo-tag">// AI Interview Coach</div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Main</div>
+      <a class="nav-link" href="dashboard.html">
+        <span class="nav-icon">◈</span> Dashboard
+      </a>
+      <a class="nav-link" href="practice.html">
+        <span class="nav-icon">▷</span> Practice
+      </a>
+      <div class="nav-section-label">Review</div>
+      <a class="nav-link" href="history.html">
+        <span class="nav-icon">◷</span> History
+      </a>
+      <a class="nav-link" href="leaderboard.html">
+        <span class="nav-icon">◆</span> Leaderboard
+      </a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="user-row">
+        <div class="avatar" id="sb-avatar">?</div>
+        <div class="user-meta">
+          <div class="user-name" id="sb-name">Loading...</div>
+          <div class="user-streak" id="sb-streak">🔥 — streak</div>
+        </div>
+      </div>
+      <button class="logout-link" onclick="logout()">⤴ Sign out</button>
+    </div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <div class="main-area">
+    <header class="topbar">
+      <div class="topbar-title">HISTORY</div>
+      <div class="topbar-sub">// your session archive</div>
+    </header>
+
+    <main class="page-content">
+
+      <div class="history-filters">
+        <button class="filter-btn active" onclick="filterHistory('all')">All</button>
+        <button class="filter-btn" onclick="filterHistory('completed')">Completed</button>
+        <button class="filter-btn" onclick="filterHistory('abandoned')">Abandoned</button>
+      </div>
+
+      <div class="history-grid" id="history-grid">
+        <div class="loading-row"><div class="spinner"></div> Loading sessions...</div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script src="../js/history.js"></script>
+</body>
+</html>
