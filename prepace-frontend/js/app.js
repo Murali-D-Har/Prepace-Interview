@@ -1,6 +1,6 @@
 /* app.js — core module: API, auth, shared utilities */
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://prepace-backend.vercel.app/api';
 
 /* ── State ───────────────────────────────────── */
 const State = {
